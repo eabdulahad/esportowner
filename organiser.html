@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Esports World Bhagalpur · Organiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Hind:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#0f121a;--surface:#171b26;--surface2:#1f2432;--line:#2b3144;--fg:#eaedf5;--muted:#9aa3b8;--accent:#ff9f1c;--accent-fg:#1a1200;--ok:#35d0a0;--warn:#f2c14e;--bad:#ff6b6b;
+--display:'Rajdhani','Arial Narrow',sans-serif;--body:'Hind','Segoe UI',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;color-scheme:dark}
+@media (prefers-color-scheme: light){:root{--bg:#f4f5f9;--surface:#fff;--surface2:#eceef5;--line:#d5d9e6;--fg:#151826;--muted:#5b6478;--accent:#d9730d;--accent-fg:#fff;--ok:#12805c;--warn:#8a6500;--bad:#c23b3b;color-scheme:light}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto;padding-block:18px 40px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1}
+h2{font-size:26px;font-weight:700;text-transform:uppercase}
+h3{font-size:20px;font-weight:600}
+p{margin:0} a{color:var(--accent)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.06em}
+.brand b{color:var(--accent)}
+.tag{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:4px;color:var(--muted);background:var(--surface)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.game{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.btn{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);padding:9px 16px;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.small{font-size:14px;padding:5px 10px;min-height:32px}
+.btn.danger{background:transparent;color:var(--bad);border-color:var(--bad)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:16px;max-width:640px}
+.panel.wide{max-width:none}
+label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:500;min-width:0}
+label small{color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;min-height:42px;width:100%;min-width:0}
+textarea{min-height:76px;resize:vertical}
+input[type=checkbox]{width:auto;min-height:0}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.msg{font-size:14px;color:var(--bad);min-height:1.2em}
+.msg.ok{color:var(--ok)}
+.note{font-size:14px;color:var(--muted)}
+.mono{font-family:var(--mono);font-size:14px;word-break:break-all}
+.copy{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.copy .mono{flex:1 1 180px;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:9px 12px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tab{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:17px;padding:9px 16px;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer}
+.tab.on{color:var(--fg);border-bottom-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.stat{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-family:var(--display);font-size:32px;line-height:1.05}
+.stat span{font-size:13px;color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:12px}
+.item{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.item>div{min-width:0}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface2)}
+tr:last-child td{border-bottom:0}
+.pill{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.pill.ok{color:var(--ok)} .pill.warn{color:var(--warn)} .pill.bad{color:var(--bad)}
+.ans{color:var(--muted);font-size:13px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:end}
+.tools label{flex:1 1 180px}
+.ex{display:grid;grid-template-columns:2fr 1fr auto auto;gap:8px;align-items:end;border:1px solid var(--line);border-radius:4px;padding:10px}
+@media (max-width:560px){.ex{grid-template-columns:1fr 1fr}}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+.login{margin:8vh auto 0;width:100%;max-width:420px}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:9px 16px;border-radius:4px;font-size:14px;z-index:20;max-width:calc(100vw - 32px)}
+</style></head><body>
+<div class="wrap" id="app"></div>
+<div id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+(function(){
+const FIREBASE={apiKey:"AIzaSyC9ZTuNJPPhLEblaHHO6JgVROyvd4VUe4U",authDomain:"esportworld-edd7a.firebaseapp.com",projectId:"esportworld-edd7a",storageBucket:"esportworld-edd7a.firebasestorage.app",messagingSenderId:"473185523696",appId:"1:473185523696:web:0ade049a415a5ec3fd6f35",measurementId:"G-EFYTVFP2HX"};
+const ADMIN_EMAIL='esportworld4455@gmail.com';
+
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rupee=n=>'₹'+Number(n).toLocaleString('en-IN');
+const fmt=t=>t?new Date(t).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',hour:'numeric',minute:'2-digit'}):'';
+const slug=s=>(String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,28))||'game';
+const rid=()=>Math.random().toString(36).slice(2,6);
+const GAMES=['BGMI','Free Fire','Chess','8 Ball Pool','Other'];
+const MODES={Solo:1,Duo:2,Squad:4,'1v1':1,Custom:0};
+
+let cfg={upiId:'abdulahad6216@ibl',payee:'Esports World Bhagalpur',fee:10,email:ADMIN_EMAIL,siteUrl:'',paytm:'',phonepe:'',gpay:'',bankHolder:'',bankName:'',bankAcc:'',bankIfsc:''};
+let db=null,user=null,unsubs=[];
+let forms=[],regs=[],authMsg='',busy=false;
+let ownerTab='games',draft=null,regFilter='all',regQuery='',confirmDel='',cfgMsg='';
+
+function mk(id,title,game,mode,nameLabel,idLabel,order){return{id,title,game,mode,teamSize:MODES[mode]||1,nameLabel,idLabel,prize:'',entryFee:0,schedule:'',slots:'',note:'',extra:[],open:true,order}}
+const DEFAULTS=[
+ mk('bgmi-solo','BGMI Solo','BGMI','Solo','In-game name','BGMI character ID',1),
+ mk('bgmi-duo','BGMI Duo','BGMI','Duo','In-game name','BGMI character ID',2),
+ mk('bgmi-squad','BGMI Squad','BGMI','Squad','In-game name','BGMI character ID',3),
+ mk('freefire-solo','Free Fire Solo','Free Fire','Solo','In-game name','Free Fire UID',4),
+ mk('freefire-duo','Free Fire Duo','Free Fire','Duo','In-game name','Free Fire UID',5),
+ mk('freefire-squad','Free Fire Squad','Free Fire','Squad','In-game name','Free Fire UID',6),
+ mk('chess-1v1','Chess 1v1','Chess','1v1','Username','Chess.com or Lichess profile link',7),
+ mk('8ball-1v1','8 Ball Pool 1v1','8 Ball Pool','1v1','Player name','8 Ball Pool unique ID',8)];
+const shownForms=()=>forms.length?forms:DEFAULTS;
+const isSample=()=>!forms.length;
+function fieldsFor(f){
+  const out=[],n=Math.max(1,+f.teamSize||1);
+  if(n>1)out.push({label:'Team name'});
+  for(let i=1;i<=n;i++){const p=n>1?'Player '+i+' ':'';out.push({label:p+(f.nameLabel||'In-game name')});out.push({label:p+(f.idLabel||'Game ID')})}
+  (f.extra||[]).forEach(x=>{if(x.label)out.push({label:x.label})});
+  return out;
+}
+function toast(t){const el=document.getElementById('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>{el.hidden=true},2400)}
+async function copy(text){try{await navigator.clipboard.writeText(text);toast('Copied')}catch(e){toast('Copy blocked here. Select the text and copy it.')}}
+const siteUrl=()=>cfg.siteUrl||'';
+const formTitle=id=>{const f=shownForms().find(x=>x.id===id);return f?f.title:id};
+const isAdmin=()=>user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL;
+
+function header(sub){return '<div class="top"><span class="brand">Esports World <b>Bhagalpur</b></span><span class="tag">'+esc(sub)+(isAdmin()?' · <a href="#" data-act="logout">Log out</a>':'')+'</span></div>'}
+function footer(){return '<div class="foot">Organiser panel · '+esc(ADMIN_EMAIL)+'</div>'}
+
+function vLogin(){
+  return '<div class="login"><div class="top" style="margin-bottom:18px"><span class="brand">Esports World <b>Bhagalpur</b></span></div>'
+   +'<form class="panel" data-form="login"><h2>Organiser login</h2><p class="note">Sign in to manage games, entries and payments.</p>'
+   +'<label>Login ID (email)<input id="l-email" type="email" autocomplete="username" value="'+esc(ADMIN_EMAIL)+'" required></label>'
+   +'<label>Password<input id="l-pass" type="password" autocomplete="current-password" required></label>'
+   +'<div class="msg">'+esc(authMsg)+'</div><button class="btn" type="submit" '+(busy?'disabled':'')+'>'+(busy?'Signing in…':'Log in')+'</button>'
+   +'<a href="#" data-act="reset" class="note">Forgot password? Send reset link</a></form></div>';
+}
+function vOwner(){
+  if(!user)return vLogin();
+  if(!isAdmin())return header('Organiser')+'<div class="panel"><h2>Not allowed</h2><p class="note">This account is not the organiser.</p><button class="btn ghost" data-act="logout">Log out</button></div>';
+  const tabs=[['games','Games'],['regs','Entries'],['settings','Settings']];
+  let body=ownerTab==='games'?(draft?vEditor():vGames()):ownerTab==='regs'?vRegs():vSettings();
+  return header('Organiser')+'<div class="tabs">'+tabs.map(t=>'<button class="tab '+(ownerTab===t[0]?'on':'')+'" data-act="tab" data-v="'+t[0]+'">'+t[1]+'</button>').join('')+'</div>'+body+footer();
+}
+function vGames(){
+  const list=shownForms();
+  return '<div class="item"><div><h2>Game forms</h2><p class="note">Each form has its own link. Send the link to players on WhatsApp or Instagram.</p></div>'
+   +'<div class="acts">'+(isSample()?'<button class="btn ghost" data-act="seed">Save starter games</button>':(DEFAULTS.some(d=>!forms.find(f=>f.id===d.id))?'<button class="btn ghost" data-act="seedmissing">Add missing starter games</button>':''))+'<button class="btn" data-act="new">New game form</button></div></div>'
+   +(isSample()?'<p class="note" style="color:var(--warn)">These are sample games. Press "Save starter games" once so you can edit them.</p>':'')
+   +(siteUrl()?'':'<p class="note" style="color:var(--warn)">Add your customer website link in Settings so the game links below work.</p>')
+   +'<div class="card"><b>Customer website link (all games)</b><div class="copy"><span class="mono">'+esc(siteUrl())+'</span><button class="btn small" data-act="copy" data-v="'+esc(siteUrl())+'">Copy link</button></div></div><div class="list">'+list.map(f=>{
+     const url=siteUrl()+'#f-'+f.id;
+     return '<div class="card"><div class="item"><div><span class="game">'+esc(f.game)+'</span><h3>'+esc(f.title)+'</h3><div class="meta" style="margin-top:6px"><span class="chip">'+esc(f.mode)+' · '+(f.teamSize||1)+' player'+(f.teamSize>1?'s':'')+'</span><span class="pill '+(f.open===false?'bad':'ok')+'">'+(f.open===false?'CLOSED':'OPEN')+'</span>'+(f.prize?'<span class="chip">Prize '+esc(f.prize)+'</span>':'')+(+f.entryFee>0?'<span class="chip">Entry '+rupee(f.entryFee)+'</span>':'')+'</div></div>'
+      +'<div class="acts"><button class="btn small ghost" data-act="toggle" data-v="'+esc(f.id)+'">'+(f.open===false?'Open form':'Close form')+'</button><button class="btn small ghost" data-act="edit" data-v="'+esc(f.id)+'">Edit</button><button class="btn small ghost" data-act="dup" data-v="'+esc(f.id)+'">Duplicate</button>'
+      +'<button class="btn small danger" data-act="del" data-v="'+esc(f.id)+'">'+(confirmDel===f.id?'Confirm delete':'Delete')+'</button></div></div>'
+      +'<div class="copy"><span class="mono">'+esc(url)+'</span><button class="btn small" data-act="copy" data-v="'+esc(url)+'">Copy link</button></div></div>';
+   }).join('')+'</div>';
+}
+function vEditor(){
+  const d=draft,prev=fieldsFor(d).map(x=>esc(x.label)).join(' · ');
+  return '<form class="panel wide" data-form="editor"><h2>'+(d._new?'New game form':'Edit game form')+'</h2>'
+   +'<div class="row"><label>Form title<input data-d="title" value="'+esc(d.title)+'" placeholder="BGMI Squad Cup"></label>'
+   +'<label>Game<select data-d="game">'+GAMES.map(g=>'<option'+(g===d.game?' selected':'')+'>'+g+'</option>').join('')+'</select></label>'
+   +'<label>Mode<select data-d="mode">'+Object.keys(MODES).map(g=>'<option'+(g===d.mode?' selected':'')+'>'+g+'</option>').join('')+'</select></label>'
+   +'<label>Players per team<input data-d="teamSize" type="number" min="1" max="10" value="'+esc(d.teamSize)+'"></label></div>'
+   +'<div class="row"><label>Name label<input data-d="nameLabel" value="'+esc(d.nameLabel)+'"></label><label>ID label<input data-d="idLabel" value="'+esc(d.idLabel)+'"></label>'
+   +'<label>Prize pool<input data-d="prize" value="'+esc(d.prize)+'" placeholder="₹5,000"></label><label>Match date and time<input data-d="schedule" value="'+esc(d.schedule)+'" placeholder="Sun 9 Nov, 6 PM"></label>'
+   +'<label>Slots<input data-d="slots" value="'+esc(d.slots)+'" placeholder="100"></label><label>Entry fee after form (₹)<small>0 = no second payment</small><input data-d="entryFee" type="number" min="0" value="'+esc(d.entryFee||0)+'"></label></div>'
+   +'<label>Rules or note shown to players<textarea data-d="note">'+esc(d.note)+'</textarea></label>'
+   +'<div><h3>Extra questions</h3><p class="note">Players always get team name, player names and IDs. Add anything else here.</p></div>'
+   +'<div class="list">'+(d.extra||[]).map((x,i)=>'<div class="ex"><label>Question<input data-x="'+i+'.label" value="'+esc(x.label)+'"></label>'
+      +'<label>Type<select data-x="'+i+'.type">'+['text','number','choice'].map(t=>'<option'+(t===x.type?' selected':'')+'>'+t+'</option>').join('')+'</select></label>'
+      +'<label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" data-x="'+i+'.required"'+(x.required?' checked':'')+'>Required</label>'
+      +'<button type="button" class="btn small danger" data-act="xdel" data-v="'+i+'">Remove</button>'
+      +(x.type==='choice'?'<label style="grid-column:1/-1">Options, separated by commas<input data-x="'+i+'.options" value="'+esc(x.options)+'" placeholder="Android, iOS"></label>':'')+'</div>').join('')
+   +'<button type="button" class="btn ghost small" data-act="xadd" style="align-self:flex-start">Add question</button></div>'
+   +'<p class="note">Players will fill: '+prev+'</p><div class="msg">'+esc(cfgMsg)+'</div>'
+   +'<div class="acts"><button class="btn" type="submit">Save form</button><button class="btn ghost" type="button" data-act="cancel">Cancel</button></div></form>';
+}
+function vRegs(){
+  const all=regs.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+  const q=regQuery.trim().toLowerCase();
+  const list=all.filter(r=>(regFilter==='all'||r.formId===regFilter)&&(!q||[r.name,r.phone,r.email].join(' ').toLowerCase().indexOf(q)>-1));
+  const ver=all.filter(r=>r.payStatus==='verified').length,pend=all.filter(r=>r.payStatus!=='verified'&&r.payStatus!=='rejected').length;
+  const entVer=all.filter(r=>r.entryStatus==='verified').reduce((s,r)=>s+(+r.entryAmount||0),0);
+  const opts='<option value="all">All games</option>'+shownForms().map(f=>'<option value="'+esc(f.id)+'"'+(regFilter===f.id?' selected':'')+'>'+esc(f.title)+'</option>').join('');
+  return '<div class="stats"><div class="stat"><b>'+all.length+'</b><span>Entries</span></div><div class="stat"><b>'+pend+'</b><span>Awaiting check</span></div><div class="stat"><b>'+ver+'</b><span>Verified</span></div><div class="stat"><b>'+rupee(ver*(+cfg.fee||0)+entVer)+'</b><span>Verified money</span></div></div>'
+   +'<div class="tools"><label>Game<select data-r="f">'+opts+'</select></label><label>Search<input id="r-q" data-r="q" value="'+esc(regQuery)+'" placeholder="Name, phone, email"></label><button class="btn ghost" data-act="csv">Download CSV</button></div>'
+   +(list.length?'<div class="tbl"><table><thead><tr><th>When</th><th>Player</th><th>Game</th><th>Fee</th><th>Status</th><th>Entry fee</th><th>Details</th><th></th></tr></thead><tbody>'
+    +list.map(r=>{
+      const k=r.id;
+      const st=r.payStatus==='verified'?'<span class="pill ok">VERIFIED</span>':r.payStatus==='rejected'?'<span class="pill bad">REJECTED</span>':'<span class="pill warn">CHECK</span>';
+      const ans=Object.keys(r.answers||{}).map(a=>esc(a)+': '+esc(r.answers[a])).join('<br>');
+      const ent=r.entryAmount?rupee(r.entryAmount)+'<br><span class="ans">'+esc(fmt(r.entryPaidAt))+'</span><br>'+(r.entryStatus==='verified'?'<span class="pill ok">VERIFIED</span>':r.entryStatus==='rejected'?'<span class="pill bad">REJECTED</span>':'<span class="pill warn">CHECK</span>')
+        +'<br>'+(r.entryStatus==='verified'?'':'<button class="btn small" data-act="ever" data-v="'+esc(k)+'">Verify</button> ')+(r.entryStatus==='rejected'?'':'<button class="btn small ghost" data-act="erej" data-v="'+esc(k)+'">Reject</button>'):'<span class="ans">-</span>';
+      return '<tr><td>'+esc(fmt(r.createdAt))+'</td><td><b>'+esc(r.name)+'</b><br><span class="ans">+91 '+esc(r.phone)+'<br><a href="mailto:'+esc(r.email)+'">'+esc(r.email)+'</a></span></td><td>'+esc(formTitle(r.formId))+'<br><span class="ans">'+(r.stage==='registered'?'Form filled':'Form not filled')+'</span></td>'
+       +'<td class="mono">'+rupee(r.amount||cfg.fee)+'</td><td>'+st+'</td><td>'+ent+'</td><td class="ans">'+(ans||'-')+'</td>'
+       +'<td><div class="acts" style="flex-direction:column">'+(r.payStatus==='verified'?'':'<button class="btn small" data-act="ver" data-v="'+esc(k)+'">Verify</button>')+(r.payStatus==='rejected'?'':'<button class="btn small ghost" data-act="rej" data-v="'+esc(k)+'">Reject</button>')
+       +'<button class="btn small danger" data-act="rdel" data-v="'+esc(k)+'">'+(confirmDel===k?'Confirm':'Delete')+'</button></div></td></tr>';
+    }).join('')+'</tbody></table></div>':'<div class="panel"><h3>No entries yet</h3><p class="note">Entries appear here as players pay and register.</p></div>');
+}
+function vSettings(){
+  return '<form class="panel" data-form="settings"><h2>Payment settings</h2><p class="note">Players pay this UPI ID. Check each payment in your UPI app or bank statement before you press Verify.</p>'
+   +'<label>UPI ID<input id="s-upi" value="'+esc(cfg.upiId)+'" placeholder="name@bank" autocapitalize="off"></label>'
+   +'<div class="row"><label>Name shown to players<input id="s-payee" value="'+esc(cfg.payee)+'"></label><label>Fee to open the form (₹)<input id="s-fee" type="number" min="1" value="'+esc(cfg.fee)+'"></label></div>'
+   +'<label>Customer website link<small>Paste the link of your customer website. Game links are built from it.</small><input id="s-site" value="'+esc(cfg.siteUrl||'')+'" placeholder="https://..."></label>'
+   +'<label>Organiser email shown to players<input id="s-email" type="email" value="'+esc(cfg.email)+'"></label>'
+   +'<h3>More payment options <small>(leave blank to hide)</small></h3><div class="row"><label>Paytm number or ID<input id="s-paytm" value="'+esc(cfg.paytm)+'"></label><label>PhonePe number or ID<input id="s-phonepe" value="'+esc(cfg.phonepe)+'"></label><label>Google Pay number or ID<input id="s-gpay" value="'+esc(cfg.gpay)+'"></label></div>'
+   +'<h3>Bank transfer <small>(needs account number and IFSC)</small></h3><div class="row"><label>Account holder<input id="s-bh" value="'+esc(cfg.bankHolder)+'"></label><label>Bank name<input id="s-bn" value="'+esc(cfg.bankName)+'"></label><label>Account number<input id="s-ba" inputmode="numeric" value="'+esc(cfg.bankAcc)+'"></label><label>IFSC code<input id="s-bi" autocapitalize="characters" value="'+esc(cfg.bankIfsc)+'"></label></div>'
+   +'<div class="msg '+(cfgMsg==='Saved'?'ok':'')+'">'+esc(cfgMsg)+'</div><button class="btn" type="submit">Save settings</button></form>';
+}
+function render(){document.getElementById('app').innerHTML=vOwner()}
+function soft(){
+  const a=document.activeElement;
+  if(a&&/INPUT|TEXTAREA|SELECT/.test(a.tagName)&&document.getElementById('app').contains(a))return;
+  render();
+}
+
+function subscribe(){
+  unsub();
+  const bad=e=>{console.warn(e&&e.code)};
+  unsubs.push(db.doc('settings/main').onSnapshot(s=>{if(s.exists)cfg=Object.assign({},cfg,s.data());soft()},bad));
+  unsubs.push(db.collection('forms').onSnapshot(s=>{forms=s.docs.map(d=>Object.assign({id:d.id},d.data())).sort((a,b)=>(a.order||0)-(b.order||0));soft()},bad));
+  unsubs.push(db.collection('registrations').onSnapshot(s=>{regs=s.docs.map(d=>{const x=d.data();return Object.assign({},x,{id:d.id,formId:x.formId||d.id.split('_').slice(1).join('_')})});soft()},bad));
+}
+function unsub(){unsubs.forEach(f=>{try{f()}catch(e){}});unsubs=[]}
+
+const app=document.getElementById('app');
+app.addEventListener('submit',async ev=>{
+  ev.preventDefault();
+  const kind=ev.target.getAttribute('data-form');
+  if(kind==='login'){
+    const em=document.getElementById('l-email').value.trim(),pw=document.getElementById('l-pass').value;
+    busy=true;authMsg='';render();
+    try{await firebase.auth().signInWithEmailAndPassword(em,pw)}
+    catch(e){authMsg=(e.code==='auth/operation-not-allowed')?'Email/Password login is not turned on in Firebase yet.':(e.code==='auth/too-many-requests')?'Too many tries. Wait a few minutes.':'Wrong login ID or password.'}
+    busy=false;render();
+  }else if(kind==='editor'){
+    if(!draft.title.trim()){cfgMsg='Give the form a title.';render();return}
+    const d=Object.assign({},draft);delete d._new;
+    d.teamSize=Math.max(1,Math.min(10,+d.teamSize||1));d.entryFee=Math.max(0,+d.entryFee||0);
+    d.extra=(d.extra||[]).filter(x=>x.label&&x.label.trim());
+    if(!d.id)d.id=slug(d.title)+'-'+rid();
+    try{await db.doc('forms/'+d.id).set(d);draft=null;cfgMsg='';toast('Form saved')}
+    catch(e){cfgMsg='Could not save. Check Firestore rules.'}
+    render();
+  }else if(kind==='settings'){
+    const g=i=>document.getElementById(i).value.trim();
+    const v={upiId:g('s-upi'),payee:g('s-payee')||'Esports World Bhagalpur',fee:Math.max(1,+g('s-fee')||10),email:g('s-email'),siteUrl:g('s-site'),paytm:g('s-paytm'),phonepe:g('s-phonepe'),gpay:g('s-gpay'),bankHolder:g('s-bh'),bankName:g('s-bn'),bankAcc:g('s-ba'),bankIfsc:g('s-bi').toUpperCase()};
+    if(v.bankAcc&&!/^\d{6,18}$/.test(v.bankAcc)){cfgMsg='Account number should be 6 to 18 digits.';render();return}
+    if(v.bankIfsc&&!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(v.bankIfsc)){cfgMsg='IFSC looks wrong. Example: SBIN0001234';render();return}
+    if((v.bankAcc||v.bankIfsc)&&!(v.bankAcc&&v.bankIfsc)){cfgMsg='Add both account number and IFSC, or clear both.';render();return}
+    if(v.upiId&&!/^[\w.\-]{2,}@[a-zA-Z]{2,}$/.test(v.upiId)){cfgMsg='That UPI ID looks wrong. It should look like name@bank.';render();return}
+    try{await db.doc('settings/main').set(v);cfg=Object.assign({},cfg,v);cfgMsg='Saved'}
+    catch(e){cfgMsg='Could not save settings.'}
+    render();
+  }
+});
+
+app.addEventListener('click',async ev=>{
+  const b=ev.target.closest('[data-act]');if(!b)return;
+  const a=b.getAttribute('data-act'),v=b.getAttribute('data-v');
+  if(a==='logout'){ev.preventDefault();unsub();await firebase.auth().signOut();return}
+  if(a==='reset'){ev.preventDefault();const em=document.getElementById('l-email').value.trim();try{await firebase.auth().sendPasswordResetEmail(em);authMsg='Reset link sent to '+em;}catch(e){authMsg='Could not send reset link.'}render();return}
+  if(a==='copy')return copy(v);
+  if(a==='tab'){ownerTab=v;draft=null;confirmDel='';cfgMsg='';return render()}
+  if(a==='new'){draft=Object.assign(mk('','','BGMI','Squad','In-game name','BGMI character ID',forms.length+1),{id:'',_new:true});cfgMsg='';return render()}
+  if(a==='edit'){const f=shownForms().find(x=>x.id===v);draft=JSON.parse(JSON.stringify(f));draft.extra=draft.extra||[];cfgMsg='';return render()}
+  if(a==='cancel'){draft=null;cfgMsg='';return render()}
+  if(a==='xadd'){draft.extra.push({label:'',type:'text',required:false,options:''});return render()}
+  if(a==='xdel'){draft.extra.splice(+v,1);return render()}
+  try{
+    if(a==='seed'){for(const f of DEFAULTS)await db.doc('forms/'+f.id).set(f);toast('Starter games saved')}
+    else if(a==='seedmissing'){let n=0;for(const f of DEFAULTS){if(!forms.find(x=>x.id===f.id)){await db.doc('forms/'+f.id).set(f);n++}}toast(n+' game form(s) added')}
+    else if(a==='dup'){const f=shownForms().find(x=>x.id===v);const d=JSON.parse(JSON.stringify(f));d.id=slug(f.title)+'-'+rid();d.title=f.title+' (copy)';d.order=forms.length+1;await db.doc('forms/'+d.id).set(d);toast('Duplicated')}
+    else if(a==='toggle'){const f=shownForms().find(x=>x.id===v);await db.doc('forms/'+v).set(Object.assign({},f,{open:f.open===false}))}
+    else if(a==='del'){if(confirmDel!==v){confirmDel=v;render();return}await db.doc('forms/'+v).delete();confirmDel='';toast('Form deleted')}
+    else if(a==='ever'||a==='erej'){await db.doc('registrations/'+v).update({entryStatus:a==='ever'?'verified':'rejected'})}
+    else if(a==='ver'||a==='rej'){await db.doc('registrations/'+v).update({payStatus:a==='ver'?'verified':'rejected'})}
+    else if(a==='rdel'){if(confirmDel!==v){confirmDel=v;render();return}await db.doc('registrations/'+v).delete();confirmDel='';toast('Entry deleted')}
+    else if(a==='csv')return exportCsv();
+  }catch(e){toast('That did not save. Check Firestore rules and login.')}
+  soft();
+});
+app.addEventListener('input',ev=>{
+  const t=ev.target;
+  if(t.hasAttribute('data-d')&&draft)draft[t.getAttribute('data-d')]=t.value;
+  else if(t.hasAttribute('data-x')&&draft){const p=t.getAttribute('data-x').split('.');draft.extra[+p[0]][p[1]]=t.type==='checkbox'?t.checked:t.value}
+  else if(t.getAttribute('data-r')==='q'){regQuery=t.value;const pos=t.selectionStart;render();const n=document.getElementById('r-q');if(n){n.focus();n.setSelectionRange(pos,pos)}}
+});
+app.addEventListener('change',ev=>{
+  const t=ev.target;
+  if(t.getAttribute('data-r')==='f'){regFilter=t.value;render();return}
+  if(t.hasAttribute('data-d')&&draft){
+    const k=t.getAttribute('data-d');draft[k]=t.value;
+    if(k==='mode'&&MODES[t.value])draft.teamSize=MODES[t.value];
+    if(k==='mode'||k==='teamSize')render();
+  }else if(t.hasAttribute('data-x')&&draft){
+    const p=t.getAttribute('data-x').split('.');draft.extra[+p[0]][p[1]]=t.type==='checkbox'?t.checked:t.value;
+    if(p[1]==='type')render();
+  }
+});
+
+function exportCsv(){
+  const q=s=>{s=String(s==null?'':s);if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};
+  const head=['Time','Game','Name','Phone','Email','Open fee','Open-fee status','Form','Entry fee','Entry status','Details'];
+  const rows=regs.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).map(r=>[fmt(r.createdAt),formTitle(r.formId),r.name,r.phone,r.email,r.amount||'',r.payStatus||'',r.stage==='registered'?'filled':'pending',r.entryAmount||'',r.entryAmount?(r.entryStatus||'pending'):'',Object.keys(r.answers||{}).map(k=>k+': '+r.answers[k]).join('; ')].map(q).join(','));
+  const blob=new Blob(['﻿'+[head.join(',')].concat(rows).join('\n')],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='esports-world-bhagalpur-entries.csv';document.body.appendChild(a);a.click();a.remove();
+}
+
+render();
+try{
+  firebase.initializeApp(FIREBASE);
+  db=firebase.firestore();
+  firebase.auth().onAuthStateChanged(u=>{
+    user=(u&&!u.isAnonymous)?u:null;
+    if(isAdmin())subscribe();else unsub();
+    render();
+  });
+}catch(e){console.warn(e)}
+})();
+</script>
+</body></html>
